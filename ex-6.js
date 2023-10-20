@@ -1,20 +1,20 @@
 // Exercise #6
-let getJohnProfile = () => {
-  return new Promise(function (resolve) {
+let getJohnProfile = async () => {
+  return await new Promise (function (resolve) {
     setTimeout(
       () =>
-        resolve({
+       resolve({
           name: "John",
           age: 20,
           hobbies: ["Coding", "Football"],
         }),
-      1000
+        1000
     );
   });
 };
 
-let getJohnOrders = () => {
-  return new Promise(function (resolve) {
+let getJohnOrders = async () => {
+  return await new Promise(function (resolve) {
     setTimeout(
       () =>
         resolve([
@@ -33,3 +33,11 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+
+async function John (){
+  const JohnP = await getJohnProfile()
+  console.log(JohnP)
+  const JohnO = await getJohnOrders()
+  console.log(JohnO)
+}
+John();
